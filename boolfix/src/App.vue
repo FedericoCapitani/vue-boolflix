@@ -1,17 +1,43 @@
 <template>
   <div id="app">
-    
+    <header>
+      <input type="text" v-model="searchText">
+      <button v-on:click="sendCall">Invia</button>
+    </header>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import axios from "axios"
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    
+  },
+  data() {
+    return{
+      searchText: '',
+      data: null
+    }
+  },
+  methods: {
+    callApi(){
+      axios.get("https://api.themoviedb.org/3/search/movie?api_key=629aec4e8c473eea3b4989c3e1430c08&language=en-US&page=1&include_adult=false&query=" + this.searchText).then((response) => {
+        console.log(response);
+        this.data = response.data;
+        console.log(this.data);
+      })
+      .catch((error) => {
+        console.error();
+        error;
+        this.error = `Sorry There is a problem! ${error}`;        
+      });
+
+    },
+  sendCall(){
+    this.callApi()
   }
+  },
 }
 </script>
 
