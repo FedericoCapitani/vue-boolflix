@@ -1,1 +1,16 @@
 @import '~/node_modules/bootstrap/scss/bootstrap.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: rgb(37, 17, 216);
+    padding: 2rem;
+    input, button{
+        padding: 1rem;
+        margin-right: 10px;
+    }
+}
