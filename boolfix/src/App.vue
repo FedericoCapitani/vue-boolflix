@@ -43,6 +43,7 @@ export default {
 
     },
   sendCall(){
+    // la chiamata avviene solo se l'utente scrive qualcosa nella searchbar
     if(this.searchText !== '')
     this.callApi()
   }
