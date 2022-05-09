@@ -43,6 +43,7 @@ export default {
 
     },
   sendCall(){
+    if(this.searchText !== '')
     this.callApi()
   }
   },
