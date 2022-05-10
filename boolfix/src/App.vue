@@ -1,30 +1,39 @@
 <template>
   <div id="app">
     <header>
-      <input type="text" v-model="searchText">
-      <button v-on:click="sendCall">Invia</button>
+      <img src="https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png" alt="">
+      <div class="input_box">
+        <input type="text" v-model="searchText">
+        <button v-on:click="sendCall">Invia</button>
+      </div>
     </header>
     <main>
       <div class="output">
 
-        <div class="card" v-for="film in films" :key="film.id">
-          <div>Titolo: {{film.title}} </div>
-          <div>Titolo originale: {{film.original_title}} </div>
-          <div>
-            Lingua: <lang-flag :iso="film.original_language" />
-          </div>
-          <div>Rating: {{film.vote_average}} </div>
+        <div class="card_el" v-for="film in films" :key="film.id">
+          <div class="info" :style="{backgroundImage: 'url(https://image.tmdb.org/t/p/w300' + film.backdrop_path + ')'}">
+            <div class="infobox">
+              <div>Titolo: {{film.title}} </div>
+              <div>Titolo originale: {{film.original_title}} </div>
+              <div>
+                Lingua: <lang-flag :iso="film.original_language" />
+              </div>
+                <div>Rating: {{film.vote_average}} </div>
+              </div>
+              </div>
         </div>
 
-        <h1>SEPARATORE</h1>
-
-        <div class="card" v-for="show in TV_series" :key="show.id">
-          <div>Titolo: {{show.name}} </div>
-          <div>Titolo originale: {{show.original_name}} </div>
-          <div>
-            Lingua: <lang-flag :iso="show.original_language" />
-          </div>
-          <div>Rating: {{show.vote_average}} </div>
+        <div class="card_el" v-for="show in TV_series" :key="show.id">
+          <div class="info" :style="{backgroundImage: 'url(https://image.tmdb.org/t/p/w300' + show.backdrop_path + ')'}">
+            <div class="infobox">
+              <div>Titolo: {{show.name}} </div>
+              <div>Titolo originale: {{show.original_name}} </div>
+              <div>
+                Lingua: <lang-flag :iso="show.original_language" />
+              </div>
+                <div>Rating: {{show.vote_average}} </div>
+              </div>
+              </div>
         </div>
 
       </div>
@@ -45,7 +54,9 @@ export default {
       API_URL_tv: 'https://api.themoviedb.org/3/search/tv?api_key=629aec4e8c473eea3b4989c3e1430c08&language=en-US&page=1&include_adult=false&query=',
       searchText: '',
       films: null,
-      TV_series: null
+      TV_series: null,
+      logo_img: 'https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png',
+      thumb_path: 'https://image.tmdb.org/t/p/w342/'
     }
   },
   methods: {
