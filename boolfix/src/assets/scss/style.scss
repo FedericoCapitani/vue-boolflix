@@ -56,6 +56,11 @@ main{
                     height: 100%;
                     div{
                         visibility: hidden;
+                        .rating{
+                            i {
+                                color: yellow;
+                            }
+                        }
                     }
                 }
                 .infobox:hover{

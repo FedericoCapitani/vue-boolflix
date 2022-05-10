@@ -18,7 +18,21 @@
               <div>
                 Lingua: <lang-flag :iso="film.original_language" />
               </div>
-                <div>Rating: {{film.vote_average}} </div>
+                <div v-if="film.vote_average == 1" class="rating">
+                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i>
+               </div>
+               <div v-if="film.vote_average == 2" class="rating">
+                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i>
+               </div>
+               <div v-if="film.vote_average == 3" class="rating">
+                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i>
+               </div>
+               <div v-if="film.vote_average == 4" class="rating">
+                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i>
+               </div>
+               <div v-if="film.vote_average == 5" class="rating">
+                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i>
+               </div>
                 <div>Overview: {{film.overview}}</div>
               </div>
               </div>
@@ -32,10 +46,24 @@
               <div>
                 Lingua: <lang-flag :iso="show.original_language" />
               </div>
-                <div>Rating: {{show.vote_average}} </div>
+                </div>
+                <div v-if="show.vote_average == 1" class="rating">
+                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i>
+                </div>
+                <div v-if="show.vote_average == 2" class="rating">
+                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i>
+                </div>
+                <div v-if="show.vote_average == 3" class="rating">
+                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i>
+                </div>
+                <div v-if="show.vote_average == 4" class="rating">
+                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i>
+                </div>
+                <div v-if="show.vote_average == 5" class="rating">
+                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i>
+                </div>
                 <div>Overview: {{show.overview}}</div>
-              </div>
-              </div>
+          </div>
         </div>
 
       </div>
@@ -63,9 +91,14 @@ export default {
   },
   methods: {
     callApi(){
+      // chiamare l'API e inserire i dati dei film in un array
       axios.get(this.API_URL_movies + this.searchText).then((response) => {
         console.log(response);
         this.films = response.data.results;
+        // round rating al numero intero più vicino
+        this.films.forEach(element => {
+          element.vote_average = Math.round(element.vote_average / 2)
+        });
         console.log(this.films);
       })
       .catch((error) => {
@@ -73,9 +106,14 @@ export default {
         error;
         this.error = `Sorry There is a problem! ${error}`;        
       });
+      // chiamare l'APi e inserire in un array i dati delle serie TV
       axios.get(this.API_URL_tv + this.searchText).then((response) => {
         console.log(response);
         this.TV_series = response.data.results;
+        // round rating al numero intero più vicino
+        this.TV_series.forEach(element => {
+          element.vote_average = Math.round(element.vote_average / 2)
+        });
         console.log(this.TV_series);
       }).catch((error) => {
         console.error();
