@@ -18,21 +18,24 @@
               <div>
                 Lingua: <lang-flag :iso="film.original_language" />
               </div>
+              <div v-if="film.vote_average == 0">
+                  Rating: 0
+                </div>
                 <div v-if="film.vote_average == 1" class="rating">
-                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i>
-               </div>
-               <div v-if="film.vote_average == 2" class="rating">
-                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i>
-               </div>
-               <div v-if="film.vote_average == 3" class="rating">
-                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i>
-               </div>
-               <div v-if="film.vote_average == 4" class="rating">
-                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i>
-               </div>
-               <div v-if="film.vote_average == 5" class="rating">
-                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i>
-               </div>
+                  Rating: <font-awesome-icon icon="star" style="color: yellow"/>
+                </div>
+                <div v-if="film.vote_average == 2" class="rating">
+                    Rating: <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/>
+                </div>
+                <div v-if="film.vote_average == 3" class="rating">
+                    Rating: <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/>
+                </div>
+                <div v-if="film.vote_average == 4" class="rating">
+                    Rating: <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/>
+                </div>
+                <div v-if="film.vote_average == 5" class="rating">
+                    Rating: <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/>
+                </div>
                 <div>Overview: {{film.overview}}</div>
               </div>
               </div>
@@ -46,26 +49,28 @@
               <div>
                 Lingua: <lang-flag :iso="show.original_language" />
               </div>
+                <div v-if="show.vote_average == 0">
+                  Rating: 0
                 </div>
                 <div v-if="show.vote_average == 1" class="rating">
-                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i>
+                  Rating: <font-awesome-icon icon="star" style="color: yellow"/>
                 </div>
                 <div v-if="show.vote_average == 2" class="rating">
-                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i>
+                  Rating: <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/>
                 </div>
                 <div v-if="show.vote_average == 3" class="rating">
-                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i>
+                  Rating: <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/>
                 </div>
                 <div v-if="show.vote_average == 4" class="rating">
-                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-regular fa-star-sharp"></i>
+                  Rating: <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/>
                 </div>
                 <div v-if="show.vote_average == 5" class="rating">
-                  Rating: <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i> <i class="fa-solid fa-star-sharp"></i>
-                </div>
-                <div>Overview: {{show.overview}}</div>
+                  Rating: <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> 
+                </div>  
+              <div>Overview: {{show.overview}}</div>
+            </div>
           </div>
         </div>
-
       </div>
     </main>
   </div>
