@@ -11,7 +11,7 @@
       <div class="output">
 
         <div class="card_el" v-for="film in films" :key="film.id">
-          <div class="info" :style="{backgroundImage: 'url(https://image.tmdb.org/t/p/w300' + film.backdrop_path + ')'}">
+          <div class="info" :style="{backgroundImage: 'url(https://image.tmdb.org/t/p/w300' + film.poster_path + ')'}">
             <div class="infobox">
               <div>Titolo: {{film.title}} </div>
               <div>Titolo originale: {{film.original_title}} </div>
@@ -19,12 +19,13 @@
                 Lingua: <lang-flag :iso="film.original_language" />
               </div>
                 <div>Rating: {{film.vote_average}} </div>
+                <div>Overview: {{film.overview}}</div>
               </div>
               </div>
         </div>
 
         <div class="card_el" v-for="show in TV_series" :key="show.id">
-          <div class="info" :style="{backgroundImage: 'url(https://image.tmdb.org/t/p/w300' + show.backdrop_path + ')'}">
+          <div class="info" :style="{backgroundImage: 'url(https://image.tmdb.org/t/p/w300' + show.poster_path + ')'}">
             <div class="infobox">
               <div>Titolo: {{show.name}} </div>
               <div>Titolo originale: {{show.original_name}} </div>
@@ -32,6 +33,7 @@
                 Lingua: <lang-flag :iso="show.original_language" />
               </div>
                 <div>Rating: {{show.vote_average}} </div>
+                <div>Overview: {{show.overview}}</div>
               </div>
               </div>
         </div>
