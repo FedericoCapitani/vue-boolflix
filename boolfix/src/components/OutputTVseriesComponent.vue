@@ -35,9 +35,9 @@
 
 <script>
 export default {
-    nome: 'OutputTVseries',
+    nome: 'OutputTVseriesComponent',
     props: {
-        TV_series: Object
+        show: Object
     }
 }
 </script>

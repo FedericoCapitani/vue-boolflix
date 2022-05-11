@@ -36,9 +36,9 @@
 
 <script>
 export default {
-    nome: 'OutputFilms',
+    nome: 'OutputfilmsComponent',
     props: {
-      films: Object
+      film: Object
     }
 }
 </script>
