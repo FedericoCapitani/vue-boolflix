@@ -1,8 +1,8 @@
 <template>
 
     <main>
+        <h1>ORIGINALI NETFLIX</h1>
       <div class="output">
-
         <OutputFilm :film="film" v-for="film in films" :key="film.id" v-show="film.poster_path != null"/>
         <OutputTVseries :show="show" v-for="show in TV_series" :key="show.id" v-show="show.poster_path != null"/>
         
