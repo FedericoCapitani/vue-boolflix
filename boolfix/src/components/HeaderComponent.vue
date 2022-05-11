@@ -27,10 +27,10 @@ export default {
     },
     methods: {
         search(){
-            console.log('searching');
-            console.log(this.searchText);
+            // console.log('searching');
+            // console.log(this.searchText);
             state.searchText = this.searchText
-            console.log(state.searchText);
+            // console.log(state.searchText);
             this.$root.$emit('MainComponent')
         },
     }
