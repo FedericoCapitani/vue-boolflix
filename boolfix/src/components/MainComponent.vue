@@ -1,7 +1,7 @@
 <template>
 
     <main>
-        <h1 v-bind="films" v-show="films != null">ORIGINALI NETFLIX</h1>
+        <h1 v-bind="show_title" v-if="show_title">ORIGINALI NETFLIX</h1>
       <div class="output">
         <OutputFilm :film="film" v-for="film in films" :key="film.id" v-show="film.poster_path != null"/>
         <OutputTVseries :show="show" v-for="show in TV_series" :key="show.id" v-show="show.poster_path != null"/>
@@ -28,6 +28,7 @@ export default {
       API_URL_tv: 'https://api.themoviedb.org/3/search/tv?api_key=629aec4e8c473eea3b4989c3e1430c08&language=en-US&page=1&include_adult=false&query=',
       films: null,
       TV_series: null,
+      show_title: false,
       logo_img: 'https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png',
       thumb_path: 'https://image.tmdb.org/t/p/w342/'
     }
@@ -63,6 +64,7 @@ export default {
         error;
         this.error = `Sorry There is a problem! ${error}`;
       })
+      this.show_title = true;
     },
     sendCall(){
     // la chiamata avviene solo se l'utente scrive qualcosa nella searchbar
