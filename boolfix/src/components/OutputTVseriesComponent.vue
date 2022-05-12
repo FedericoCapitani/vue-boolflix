@@ -9,22 +9,22 @@
                 Lingua: {{show.original_language}} <lang-flag :iso="show.original_language" />
               </div>
                 <div v-if="show.vote_average == 0">
-                  Rating: 0
+                  Rating: <font-awesome-icon :icon="['far', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['far', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['far', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['far', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['far', 'star']" style="color: yellow"/>
                 </div>
                 <div v-if="show.vote_average == 1" class="rating">
-                  Rating: <font-awesome-icon icon="star" style="color: yellow"/>
+                  Rating: <font-awesome-icon :icon="['fas', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['far', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['far', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['far', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['far', 'star']" style="color: yellow"/>
                 </div>
                 <div v-if="show.vote_average == 2" class="rating">
-                  Rating: <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/>
+                  Rating: <font-awesome-icon :icon="['fas', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['fas', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['far', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['far', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['far', 'star']" style="color: yellow"/>
                 </div>
                 <div v-if="show.vote_average == 3" class="rating">
-                  Rating: <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/>
+                  Rating: <font-awesome-icon :icon="['fas', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['fas', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['fas', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['far', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['far', 'star']" style="color: yellow"/>
                 </div>
                 <div v-if="show.vote_average == 4" class="rating">
-                  Rating: <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/>
+                  Rating: <font-awesome-icon :icon="['fas', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['fas', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['fas', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['fas', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['far', 'star']" style="color: yellow"/>
                 </div>
                 <div v-if="show.vote_average == 5" class="rating">
-                  Rating: <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> <font-awesome-icon icon="star" style="color: yellow"/> 
+                  Rating: <font-awesome-icon :icon="['fas', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['fas', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['fas', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['fas', 'star']" style="color: yellow"/> <font-awesome-icon :icon="['fas', 'star']" style="color: yellow"/>
                 </div>  
               <div>Overview: {{show.overview}}</div>
             </div>
